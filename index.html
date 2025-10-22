@@ -3,43 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Federated Visual Instruction Tuning</title>
+  <title>Federated Visual Instruction Tuning for Visually Impaired Users</title>
   <link rel="stylesheet" href="assets/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Multimodal LLM using Federated Visual Instruction Tuning for Visually Impaired Users</h1>
-    <p class="author">Ankith Bala · Alina Vereshchaka</p>
-    <p class="conf">ACM ICMI 2025 (Multimodal Interaction Track)</p>
-  </header>
+  <div class="container">
+    <header>
+      <h1>Multimodal LLM using Federated Visual Instruction Tuning for Visually Impaired</h1>
+      <div class="authors">
+        <span class="author">Ankith Bala<sup>1,2</sup></span>
+        <span class="separator">·</span>
+        <span class="author">Alina Vereshchaka<sup>1</sup></span>
+      </div>
+      <div class="affiliations">
+        <span><sup>1</sup>University at Buffalo</span>
+        <span class="separator">·</span>
+        <span><sup>2</sup>Radial Ventures</span>
+      </div>
+      <p class="conf">ACM ICMI 2025 (Multimodal Interaction Track)</p>
 
-  <section class="video">
-    <h2>📽️ Presentation Video</h2>
-    <iframe width="560" height="315"
-        src="https://drive.google.com/file/d/1l83va7ZHVO5y98XsZg5MXsjxWRj2oO5W/view"
-        title="Conference Presentation"
-        frameborder="0"
-        allowfullscreen>
-    </iframe>
-  </section>
+      <div class="buttons">
+        <a href="https://dl.acm.org/doi/10.1145/3716553.3750763" target="_blank" class="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+          Paper
+        </a>
+        <a href="https://github.com/ankithbala/federated-visual-instruction-llm" target="_blank" class="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+          Code
+        </a>
+      </div>
+    </header>
 
-  <section class="links">
-    <h2>🔗 Project Links</h2>
-    <ul>
-      <li><a href="https://dl.acm.org/doi/10.1145/3716553.3750763" target="_blank">📄 Paper (PDF)</a></li>
-      <li><a href="https://github.com/ankithbala/federated-visual-instruction-llm" target="_blank">💻 Code Repository</a></li>
-    </ul>
-  </section>
+    <section class="video-section">
+      <h2>Presentation Video</h2>
+      <div class="video-container">
+        <iframe width="100%" height="450"
+            src="https://drive.google.com/file/d/1l83va7ZHVO5y98XsZg5MXsjxWRj2oO5W/preview"
+            title="Conference Presentation"
+            frameborder="0"
+            allow="autoplay"
+            allowfullscreen>
+        </iframe>
+      </div>
+    </section>
 
-  <section class="abstract">
-    <h2>📘 Abstract</h2>
-    <p>
-      We propose a novel approach combining visual instruction tuning and federated learning to develop multimodal large language models tailored for visually impaired users. Our system enables privacy-aware adaptation while supporting instruction-following across vision tasks like text reading, object identification, and navigation.
-    </p>
-  </section>
+    <section class="abstract">
+      <h2>Abstract</h2>
+      <p>
+        We propose a novel approach combining visual instruction tuning and federated learning to develop multimodal large language models tailored for visually impaired users. Our system enables privacy-aware adaptation while supporting instruction-following across vision tasks like text reading, object identification, and navigation. By keeping user data local and transmitting only lightweight model updates, our federated approach preserves privacy while achieving competitive performance with an <strong>85% task completion rate</strong> in user evaluations.
+      </p>
+    </section>
 
-  <footer>
-    <p>© 2025 Ankith Bala</p>
-  </footer>
+    <section class="highlights">
+      <h2>Key Highlights</h2>
+      <div class="highlight-grid">
+        <div class="highlight-card">
+          <div class="highlight-icon">🔒</div>
+          <h3>Privacy-Preserving</h3>
+          <p>Federated learning keeps sensitive user data local while enabling collaborative model improvement</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">⚡</div>
+          <h3>Efficient Training</h3>
+          <p>Trainable in ~36 hours on a single 2×A100 node with competitive performance</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">🎯</div>
+          <h3>High Accuracy</h3>
+          <p>85% task completion rate and 85-88% hallucination detection accuracy</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">♿</div>
+          <h3>Assistive Technology</h3>
+          <p>Real-time environmental description supporting autonomy for visually impaired users</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="method">
+      <h2>Method Overview</h2>
+      <div class="method-content">
+        <h3>System Architecture</h3>
+        <ul>
+          <li><strong>Vision Encoder:</strong> CLIP ViT-L/336px for robust visual feature extraction</li>
+          <li><strong>Connector:</strong> Two-layer MLP for vision-language alignment</li>
+          <li><strong>Language Model:</strong> Vicuna 7B for natural language understanding and generation</li>
+        </ul>
+
+        <h3>Federated Learning Approach</h3>
+        <p>
+          Our federated learning framework enables privacy-preserving fine-tuning across distributed users while maintaining model performance. The two-stage training process includes:
+        </p>
+        <ol>
+          <li><strong>Pre-training:</strong> Feature alignment between vision and language modalities</li>
+          <li><strong>Fine-tuning:</strong> End-to-end instruction tuning with multi-turn dialogue capabilities</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="results">
+      <h2>Results</h2>
+      <div class="results-content">
+        <div class="result-item">
+          <h3>User Evaluation</h3>
+          <p>Achieved <strong>85% task completion rate</strong> across real-world assistive scenarios including navigation, object identification, and text reading.</p>
+        </div>
+        <div class="result-item">
+          <h3>Hallucination Detection</h3>
+          <p>Strong performance with <strong>85-88% accuracy</strong> in identifying and preventing hallucinations in model outputs.</p>
+        </div>
+        <div class="result-item">
+          <h3>Benchmark Performance</h3>
+          <p>Competitive results on perception and reasoning benchmarks while maintaining privacy guarantees.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="citation">
+      <h2>Citation</h2>
+      <pre><code>@inproceedings{bala2025multimodal,
+  title={Multimodal LLM using Federated Visual Instruction Tuning for Visually Impaired},
+  author={Bala, Ankith and Vereshchaka, Alina},
+  booktitle={Proceedings of the 2025 International Conference on Multimodal Interaction},
+  year={2025},
+  organization={ACM}
+}</code></pre>
+    </section>
+
+    <footer>
+      <p>© 2025 Ankith Bala · University at Buffalo</p>
+    </footer>
+  </div>
 </body>
 </html>
