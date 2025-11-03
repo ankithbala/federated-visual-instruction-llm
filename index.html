@@ -17,9 +17,9 @@
         <span class="author">Alina Vereshchaka<sup>1</sup></span>
       </div>
       <div class="affiliations">
-        <span><sup>1</sup>University at Buffalo</span>
+        <span class="affiliation"><sup>1</sup>University at Buffalo</span>
         <span class="separator">·</span>
-        <span><sup>2</sup>Radial Ventures</span>
+        <span class="affiliation"><sup>2</sup>Radial Ventures</span>
       </div>
       <p class="conf">ACM ICMI 2025 (Multimodal Interaction Track)</p>
 
@@ -31,14 +31,27 @@
           </svg>
           Paper
         </a>
-        <a href="https://github.com/ankithbala/federated-visual-instruction-llm" target="_blank" class="button">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-          </svg>
-          Code
-        </a>
       </div>
     </header>
+
+    <section class="hero">
+      <div class="hero-image">
+        <img src="assets/sys_comp.png" alt="System Architecture Overview">
+      </div>
+    </section>
+
+    <section class="abstract">
+      <h2>Overview</h2>
+      <p class="lead">
+        Over 285 million people globally live with visual impairment. Many struggle with tasks like recognizing scenes, reading signs, or navigating safely. The key problem is that seeing isn't understanding—just knowing there's a chair or sign isn't enough. What visually impaired users really need is contextual understanding expressed in natural language.
+      </p>
+      <p>
+        We present a federated multimodal assistant that respects privacy while enabling real-time scene understanding. Our approach keeps user data on device—images from homes, workplaces, and personal documents stay local. Only model updates are shared. Using efficient LoRA-based instruction tuning, we created a capable multimodal assistant trainable in <strong>~36 hours on a single 2×A100 node</strong>. The system achieves <strong>85% task completion</strong> in usability studies, with users reporting natural, meaningful responses.
+      </p>
+      <p>
+        This demonstrates that privacy doesn't have to come at the cost of performance. With federated visual instruction tuning, we get both.
+      </p>
+    </section>
 
     <section class="video-section">
       <h2>Presentation Video</h2>
@@ -53,87 +66,176 @@
       </div>
     </section>
 
-    <section class="abstract">
-      <h2>Abstract</h2>
-      <p>
-        We propose a novel approach combining visual instruction tuning and federated learning to develop multimodal large language models tailored for visually impaired users. Our system enables privacy-aware adaptation while supporting instruction-following across vision tasks like text reading, object identification, and navigation. By keeping user data local and transmitting only lightweight model updates, our federated approach preserves privacy while achieving competitive performance with an <strong>85% task completion rate</strong> in user evaluations.
-      </p>
-    </section>
-
     <section class="highlights">
-      <h2>Key Highlights</h2>
+      <h2>Key Contributions</h2>
       <div class="highlight-grid">
         <div class="highlight-card">
           <div class="highlight-icon">🔒</div>
-          <h3>Privacy-Preserving</h3>
-          <p>Federated learning keeps sensitive user data local while enabling collaborative model improvement</p>
+          <h3>Privacy-Preserving Design</h3>
+          <p>User data stays on device. Instead of sending raw images to servers, only model updates are shared—making training both private and robust.</p>
         </div>
         <div class="highlight-card">
-          <div class="highlight-icon">⚡</div>
-          <h3>Efficient Training</h3>
-          <p>Trainable in ~36 hours on a single 2×A100 node with competitive performance</p>
+          <div class="highlight-icon">📚</div>
+          <h3>Visual Instruction Tuning</h3>
+          <p>Teaching LLMs to see and talk by framing tasks as natural instructions—moving beyond recognition to contextual reasoning.</p>
         </div>
         <div class="highlight-card">
           <div class="highlight-icon">🎯</div>
-          <h3>High Accuracy</h3>
-          <p>85% task completion rate and 85-88% hallucination detection accuracy</p>
+          <h3>Strong Performance</h3>
+          <p>Federated fine-tuning nearly matches centralized performance while preserving privacy and handling diverse user environments.</p>
         </div>
         <div class="highlight-card">
-          <div class="highlight-icon">♿</div>
-          <h3>Assistive Technology</h3>
-          <p>Real-time environmental description supporting autonomy for visually impaired users</p>
+          <div class="highlight-icon">⚡</div>
+          <h3>Efficient & Practical</h3>
+          <p>LoRA-based adaptation enables training on resource-constrained devices, making assistive AI accessible and deployable.</p>
         </div>
       </div>
     </section>
 
-    <section class="method">
-      <h2>Method Overview</h2>
-      <div class="method-content">
-        <h3>System Architecture</h3>
-        <ul>
-          <li><strong>Vision Encoder:</strong> CLIP ViT-L/336px for robust visual feature extraction</li>
-          <li><strong>Connector:</strong> Two-layer MLP for vision-language alignment</li>
-          <li><strong>Language Model:</strong> Vicuna 7B for natural language understanding and generation</li>
-        </ul>
+    <section class="overview-combined">
+      <div class="overview-grid">
+        <div class="overview-main">
+          <h2>How It Works</h2>
+          <p>Our system integrates three core components that work together:</p>
+          <ul class="feature-list">
+            <li><strong>Vision Understanding:</strong> A CLIP based encoder processes images to extract meaningful visual features</li>
+            <li><strong>Smart Connection:</strong> A specialized connector bridges visual information with language understanding</li>
+            <li><strong>Natural Conversation:</strong> A language model interprets your questions and generates helpful responses</li>
+          </ul>
 
-        <h3>Federated Learning Approach</h3>
-        <p>
-          Our federated learning framework enables privacy-preserving fine-tuning across distributed users while maintaining model performance. The two-stage training process includes:
-        </p>
-        <ol>
-          <li><strong>Pre-training:</strong> Feature alignment between vision and language modalities</li>
-          <li><strong>Fine-tuning:</strong> End-to-end instruction tuning with multi-turn dialogue capabilities</li>
-        </ol>
+          <p style="margin-top: 24px;">When you send an image and question:</p>
+          <ul class="feature-list">
+            <li><strong>Step 1:</strong> The vision encoder analyzes your image</li>
+            <li><strong>Step 2:</strong> Visual information combines with your question</li>
+            <li><strong>Step 3:</strong> The language model generates a natural answer</li>
+            <li><strong>Step 4:</strong> Verification ensures accuracy</li>
+          </ul>
+        </div>
+
+        <div class="overview-demo">
+          <div class="figure">
+            <img src="assets/gradio_ui.png" alt="Interactive Demo Interface">
+            <p class="caption">Interactive interface for real-time image analysis and assistance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="system-architecture">
+      <h2>System Architecture</h2>
+      <div class="system-arch-full">
+        <div class="arch-image-full">
+          <img src="assets/sys_comp.png" alt="System Components">
+        </div>
+        <div class="arch-stages-horizontal">
+          <div class="stage-horizontal">
+            <div class="stage-number">1</div>
+            <div class="stage-content">
+              <h4>Vision Encoder</h4>
+              <p>A powerful CLIP ViT-L/336px encoder processes images to extract rich visual features, identifying objects, text, spatial relationships, and context.</p>
+            </div>
+          </div>
+          <div class="stage-horizontal">
+            <div class="stage-number">2</div>
+            <div class="stage-content">
+              <h4>Multimodal Connector</h4>
+              <p>A specialized two-layer MLP bridges vision and language, translating visual features into a form the language model can understand.</p>
+            </div>
+          </div>
+          <div class="stage-horizontal">
+            <div class="stage-number">3</div>
+            <div class="stage-content">
+              <h4>Language Model</h4>
+              <p>Vicuna 7B generates natural, conversational responses based on visual information and your questions with accuracy verification.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="technical-architecture">
+      <h2>Technical Architecture</h2>
+      <div class="tech-arch-grid">
+        <div class="tech-arch-item">
+          <div class="figure">
+            <img src="assets/arch.png" alt="Model Architecture">
+            <p class="caption">Detailed processing pipeline</p>
+          </div>
+          <div class="tech-desc">
+            <h3>Processing Flow</h3>
+            <p>Visual features flow through the connector layer where they align with language embeddings. The language model then processes both the visual context and your query to generate accurate responses with verification.</p>
+          </div>
+        </div>
+
+        <div class="tech-arch-item">
+          <div class="figure">
+            <img src="assets/federated_learning_architecture.png" alt="Federated Learning">
+            <p class="caption">Privacy preserving training</p>
+          </div>
+          <div class="tech-desc">
+            <h3>Federated Learning</h3>
+            <p>Your device trains locally on your data, then shares only encrypted model weight updates, never your actual images. Multiple devices collaborate to improve the global model while keeping all personal data private.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="results">
-      <h2>Results</h2>
+      <h2>Real-World Performance</h2>
       <div class="results-content">
         <div class="result-item">
-          <h3>User Evaluation</h3>
-          <p>Achieved <strong>85% task completion rate</strong> across real-world assistive scenarios including navigation, object identification, and text reading.</p>
+          <h3>Usability Study</h3>
+          <p>Tested with participants performing object identification, text reading, and navigation tasks. Achieved <strong>over 80% task success</strong>, fewer critical errors, and positive feedback on naturalness of responses.</p>
         </div>
         <div class="result-item">
-          <h3>Hallucination Detection</h3>
-          <p>Strong performance with <strong>85-88% accuracy</strong> in identifying and preventing hallucinations in model outputs.</p>
+          <h3>Hallucination Reduction</h3>
+          <p>Evaluated on HallusionBench dataset. Federated fine-tuning reduced hallucination rates compared to baseline, showing that diverse distributed data improves reliability.</p>
         </div>
         <div class="result-item">
-          <h3>Benchmark Performance</h3>
-          <p>Competitive results on perception and reasoning benchmarks while maintaining privacy guarantees.</p>
+          <h3>Nearly Matches Centralized</h3>
+          <p>Federated fine-tuning nearly matches centralized performance on OK-VQA, VQAv2, and GQA while preserving privacy. The key insight: privacy doesn't have to come at the cost of performance.</p>
         </div>
       </div>
     </section>
 
-    <section class="citation">
-      <h2>Citation</h2>
-      <pre><code>@inproceedings{bala2025multimodal,
+    <section class="impact">
+      <h2>Impact & Applications</h2>
+      <div class="impact-content">
+        <p>This technology opens new possibilities for independence and accessibility:</p>
+        <div class="use-cases">
+          <div class="use-case">
+            <h3>🏪 Shopping & Daily Life</h3>
+            <p>Read product labels, find items on shelves, check expiration dates, and navigate stores independently.</p>
+          </div>
+          <div class="use-case">
+            <h3>🗺️ Navigation</h3>
+            <p>Understand street signs, identify landmarks, get real-time descriptions of surroundings and obstacles.</p>
+          </div>
+          <div class="use-case">
+            <h3>📱 Digital Content</h3>
+            <p>Access visual content on screens, understand images in documents, and engage with social media photos.</p>
+          </div>
+          <div class="use-case">
+            <h3>🏡 Home & Personal</h3>
+            <p>Identify objects, read mail, check clothing colors, and handle everyday visual tasks with confidence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="research">
+      <h2>Research & Publication</h2>
+      <p>This work was presented at ACM ICMI 2025. For technical details, methodology, and complete evaluation results, please refer to our paper.</p>
+      <div class="citation-box">
+        <h3>Citation</h3>
+        <pre><code>@inproceedings{bala2025multimodal,
   title={Multimodal LLM using Federated Visual Instruction Tuning for Visually Impaired},
   author={Bala, Ankith and Vereshchaka, Alina},
   booktitle={Proceedings of the 2025 International Conference on Multimodal Interaction},
   year={2025},
   organization={ACM}
 }</code></pre>
+      </div>
     </section>
 
     <footer>
