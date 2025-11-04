@@ -5,6 +5,24 @@
   box-sizing: border-box;
 }
 
+/* Home Link */
+.home-link {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  z-index: 1000;
+}
+
+.home-link:hover {
+  color: #764ba2;
+  transform: translateX(-2px);
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.7;
@@ -539,11 +557,43 @@ p {
   border: 1px solid #e5e7eb;
 }
 
-.citation-box h3 {
-  margin-top: 0;
+.citation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
+}
+
+.citation-box h3 {
+  margin: 0;
   color: #1a1a1a;
   font-size: 1.2rem;
+}
+
+.copy-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.copy-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.copy-button svg {
+  width: 14px;
+  height: 14px;
 }
 
 .citation-box pre {
@@ -581,6 +631,14 @@ a:hover {
 }
 
 /* Responsive Design */
+@media (max-width: 768px) {
+  .home-link {
+    top: 16px;
+    left: 16px;
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 1200px) {
   .overview-grid {
     grid-template-columns: 1fr;

@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <a href="https://ankithbala.com" class="home-link">← Home</a>
   <div class="container">
     <header>
       <h1>Multimodal LLM using Federated Visual Instruction Tuning for Visually Impaired</h1>
@@ -227,20 +228,53 @@
       <h2>Research & Publication</h2>
       <p>This work was presented at ACM ICMI 2025. For technical details, methodology, and complete evaluation results, please refer to our paper.</p>
       <div class="citation-box">
-        <h3>Citation</h3>
-        <pre><code>@inproceedings{bala2025multimodal,
-  title={Multimodal LLM using Federated Visual Instruction Tuning for Visually Impaired},
-  author={Bala, Ankith and Vereshchaka, Alina},
-  booktitle={Proceedings of the 2025 International Conference on Multimodal Interaction},
-  year={2025},
-  organization={ACM}
+        <div class="citation-header">
+          <h3>Citation</h3>
+          <button class="copy-button" onclick="copyToClipboard()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            Copy
+          </button>
+        </div>
+        <pre><code id="citation-text">@inproceedings{10.1145/3716553.3750763,
+  author = {Bala, Ankith and Vereshchaka, Alina},
+  title = {Multimodal LLM using Federated Visual Instruction Tuning for Visually Impaired},
+  year = {2025},
+  isbn = {9798400714993},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3716553.3750763},
+  doi = {10.1145/3716553.3750763},
+  booktitle = {Proceedings of the 27th International Conference on Multimodal Interaction},
+  pages = {191–199},
+  numpages = {9},
+  keywords = {Multimodal Interaction; Assistive Technology; Visually Impaired; Federated Learning; Multimodal LLMs; Responsible AI},
+  series = {ICMI '25}
 }</code></pre>
       </div>
     </section>
 
     <footer>
-      <p>© 2025 Ankith Bala · University at Buffalo</p>
+      <p>© 2025 Ankith Bala</p>
     </footer>
   </div>
+
+  <script>
+    function copyToClipboard() {
+      const citationText = document.getElementById('citation-text').textContent;
+      navigator.clipboard.writeText(citationText).then(() => {
+        const button = document.querySelector('.copy-button');
+        const originalText = button.innerHTML;
+        button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!';
+        button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+        setTimeout(() => {
+          button.innerHTML = originalText;
+          button.style.background = '';
+        }, 2000);
+      });
+    }
+  </script>
 </body>
 </html>
