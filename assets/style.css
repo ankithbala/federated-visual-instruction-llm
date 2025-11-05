@@ -308,7 +308,7 @@ p {
 
 .overview-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 0.9fr 1.1fr;
   gap: 50px;
   align-items: start;
 }
@@ -340,7 +340,10 @@ p {
 }
 
 .overview-demo .figure img {
-  max-width: 90%;
+  width: 100%;
+  height: auto;
+  min-height: 400px;
+  object-fit: contain;
 }
 
 /* System Architecture Section */
@@ -646,7 +649,7 @@ a:hover {
   }
 
   .overview-demo .figure img {
-    max-width: 70%;
+    max-width: 85%;
   }
 
   .arch-image-full img {
